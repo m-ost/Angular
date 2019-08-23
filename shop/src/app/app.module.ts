@@ -5,22 +5,19 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './product-component/product.component';
 import { CommonModule } from '@angular/common';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ServiceComponent } from './service/service.component';
+import { ProductListService } from './product-list/product-list.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     ProductListComponent,
-    ServiceComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
-    ProductListComponent,
-    ProductComponent
   ],
-  providers: [],
+  providers: [ProductListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
