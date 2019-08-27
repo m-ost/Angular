@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ProductComponent } from './product-component/product.component';
+import { ProductComponent } from './shop/product-component/product.component';
 import { CommonModule } from '@angular/common';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductListService } from './product-list/product-list.service';
+import { ProductListComponent } from './shop/product-list/product-list.component';
+import { ProductShopService } from './shop/services/product-shop.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { ProductListService } from './product-list/product-list.service';
     CommonModule,
     BrowserModule,
   ],
-  providers: [ProductListService],
+  providers: [ProductShopService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
