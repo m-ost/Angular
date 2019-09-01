@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <td>
+        Name
+      </td>
+      <td>
+        Price
+      </td>
+      <td>
+        Category
+      </td>
+      <td>
+        Is available
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.category}}</td>
+      <td>{{product.isAvailable}}</td>
+      <button (click)="onBuy()">Buy</button>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="message">
+  {{message}}
+</div>
