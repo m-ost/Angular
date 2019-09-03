@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product.model';
 import { CategoryList } from '../models/category.enum';
+import { ProductShopService } from '../services/product-shop.service';
 
 
 @Component({
@@ -11,13 +12,9 @@ import { CategoryList } from '../models/category.enum';
 export class ProductListComponent implements OnInit {
   public products: Product[];
 
-  constructor() {}
+  constructor(private productShopService: ProductShopService) {}
 
   ngOnInit() {
-    this.products = [
-      { name: 'Apple', price: 21, category: CategoryList.Food, isAvailable: true },
-      { name: 'Orange', price: 43, category: CategoryList.Food, isAvailable: false },
-      { name: 'Cup', price: 12, category: CategoryList.Kitchen, isAvailable: true },
-    ];
+    this.products = this.productShopService.getProducts();
   }
 }

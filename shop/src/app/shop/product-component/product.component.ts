@@ -8,7 +8,7 @@ import { Product } from '../models/product.model';
 })
 export class ProductComponent implements OnInit {
   public message: string;
-  @Input() public products: Product[];
+  @Input() public product: Product;
 
 
   constructor() {}
@@ -17,7 +17,7 @@ export class ProductComponent implements OnInit {
   }
 
   onBuy(): void {
-    this.message = 'The goods were added';
-    setTimeout(() => this.message = '', 2000);
+    this.message = `The ${this.product.name} was bought!`;
+    console.log(this.message);
   }
 }

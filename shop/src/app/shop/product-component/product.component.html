@@ -1,30 +1,7 @@
-<table>
-  <thead>
-    <tr>
-      <td>
-        Name
-      </td>
-      <td>
-        Price
-      </td>
-      <td>
-        Category
-      </td>
-      <td>
-        Is available
-      </td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let product of products">
-      <td>{{product.name}}</td>
-      <td>{{product.price}}</td>
-      <td>{{product.category}}</td>
-      <td>{{product.isAvailable}}</td>
-      <button (click)="onBuy()">Buy</button>
-    </tr>
-  </tbody>
-</table>
-<div *ngIf="message">
-  {{message}}
+<div class="product">
+  <span class="product-item">{{product.name}}</span>
+  <span class="product-item">{{product.price}}</span>
+  <span class="product-item">{{product.category}}</span>
+  <span class="product-item">{{product.isAvailable}}</span>
+  <button (click)="onBuy()">Buy</button>
 </div>
