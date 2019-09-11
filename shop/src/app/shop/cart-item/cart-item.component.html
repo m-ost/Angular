@@ -1,1 +1,7 @@
-<p>cart-item works!</p>
+<div class="product">
+  <p class="product-item" [textContent]="product.name"></p>
+  <p class="product-item" [textContent]="product.price"></p>
+  <p class="product-item" [textContent]="product.category"></p>
+  <p class="product-item" [textContent]="product.isAvailable"></p>
+  <button (click)="removeProduct()">Remove</button>
+</div>

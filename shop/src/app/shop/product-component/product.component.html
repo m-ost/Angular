@@ -1,7 +1,7 @@
 <div class="product">
-  <span class="product-item">{{product.name}}</span>
-  <span class="product-item">{{product.price}}</span>
-  <span class="product-item">{{product.category}}</span>
-  <span class="product-item">{{product.isAvailable}}</span>
+  <p class="product-item" [textContent]="product.name"></p>
+  <p class="product-item" [textContent]="product.price"></p>
+  <p class="product-item" [textContent]="product.category"></p>
+  <p class="product-item" [textContent]="product.isAvailable"></p>
   <button (click)="onBuy()">Buy</button>
 </div>
