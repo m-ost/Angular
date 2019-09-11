@@ -1,0 +1,12 @@
+<div class="cart-wrapper">
+  <div *ngIf="cart.length; else emptyCart">
+    <div *ngFor="let product of cart">
+      <span [textContent]="cartItemsCount[product.id]"></span><app-cart-item [product]="product"></app-cart-item>
+    </div>
+  </div>
+</div>
+
+<ng-template #emptyCart>
+  Your cart is empty.
+</ng-template>
+

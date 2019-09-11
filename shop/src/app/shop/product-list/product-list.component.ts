@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Product } from '../models/product.model';
 import { CategoryList } from '../models/category.enum';
 
+import { ProductShopService } from '../services/product-shop.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -11,13 +14,17 @@ import { CategoryList } from '../models/category.enum';
 export class ProductListComponent implements OnInit {
   public products: Product[];
 
-  constructor() {}
+  constructor(
+    private productShopService: ProductShopService,
+    private cartService: CartService
+  ) {}
 
-  ngOnInit() {
-    this.products = [
-      { name: 'Apple', price: 21, category: CategoryList.Food, isAvailable: true },
-      { name: 'Orange', price: 43, category: CategoryList.Food, isAvailable: false },
-      { name: 'Cup', price: 12, category: CategoryList.Kitchen, isAvailable: true },
-    ];
+  ngOnInit(): void {
+    this.products = this.productShopService.getProducts();
+  }
+
+  buyProduct(product: Product): void {
+    console.log(product);
+    this.cartService.addToCart(product);
   }
 }
